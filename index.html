@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commandes GitLab essentielles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 600px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .command-box {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fafafa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .command-box .explanation {
+      width: 70%;
+    }
+    .command-box code {
+      display: block;
+      background-color: #e9ecef;
+      padding: 5px;
+      border-radius: 4px;
+      margin: 5px 0;
+    }
+    .command-box button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .command-box button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Commandes GitLab Essentielles</h1>
+    
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Cloner un dépôt GitLab :</strong>
+        <p>Utilisez cette commande pour cloner un dépôt GitLab localement.</p>
+        <code>git clone https://gitlab.com/username/projet.git</code>
+      </div>
+      <button onclick="copyToClipboard('git clone https://gitlab.com/username/projet.git')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Ajouter des fichiers et préparer un commit :</strong>
+        <p>Ajoutez tous les fichiers modifiés dans l'index pour préparer un commit.</p>
+        <code>git add .</code>
+      </div>
+      <button onclick="copyToClipboard('git add .')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Créer un commit :</strong>
+        <p>Créez un commit avec un message explicatif.</p>
+        <code>git commit -m "Message de commit"</code>
+      </div>
+      <button onclick="copyToClipboard('git commit -m \"Message de commit\"')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Pousser les modifications vers le dépôt distant :</strong>
+        <p>Envoyez vos modifications locales sur le dépôt GitLab distant.</p>
+        <code>git push origin nom-branche</code>
+      </div>
+      <button onclick="copyToClipboard('git push origin nom-branche')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Récupérer les modifications du dépôt distant :</strong>
+        <p>Synchronisez votre dépôt local avec les dernières modifications depuis GitLab.</p>
+        <code>git pull origin nom-branche</code>
+      </div>
+      <button onclick="copyToClipboard('git pull origin nom-branche')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Afficher le statut des fichiers :</strong>
+        <p>Vérifiez les fichiers modifiés, non suivis ou en attente de commit.</p>
+        <code>git status</code>
+      </div>
+      <button onclick="copyToClipboard('git status')">Copier</button>
+    </div>
+    
+  </div>
+
+  <script>
+    function copyToClipboard(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      alert('Commande copiée dans le presse-papier : ' + text);
+    }
+  </script>
+
+</body>
+</html>
 
