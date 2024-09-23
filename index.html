@@ -21,7 +21,9 @@
       border-radius: 8px;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
       width: 90%;
-      max-width: 600px;
+      max-width: 800px;
+      overflow-y: auto;
+      max-height: 90vh;
     }
     h1 {
       text-align: center;
@@ -64,20 +66,128 @@
 
   <div class="container">
     <h1>Commandes GitLab Essentielles</h1>
-    
+
     <div class="command-box">
       <div class="explanation">
-        <strong>Cloner un dépôt GitLab :</strong>
-        <p>Utilisez cette commande pour cloner un dépôt GitLab localement.</p>
-        <code>git clone https://gitlab.com/username/projet.git</code>
+        <strong>Créer un commit :</strong>
+        <p>Enregistre les modifications avec un message descriptif.</p>
+        <code>git commit</code>
       </div>
-      <button onclick="copyToClipboard('git clone https://gitlab.com/username/projet.git')">Copier</button>
+      <button onclick="copyToClipboard('git commit')">Copier</button>
     </div>
 
     <div class="command-box">
       <div class="explanation">
-        <strong>Ajouter des fichiers et préparer un commit :</strong>
-        <p>Ajoutez tous les fichiers modifiés dans l'index pour préparer un commit.</p>
+        <strong>Afficher les branches disponibles :</strong>
+        <p>Liste toutes les branches disponibles dans le dépôt.</p>
+        <code>git branch</code>
+      </div>
+      <button onclick="copyToClipboard('git branch')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Supprimer une branche :</strong>
+        <p>Supprime une branche localement.</p>
+        <code>git branch -d nom-branche</code>
+      </div>
+      <button onclick="copyToClipboard('git branch -d nom-branche')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Renommer une branche :</strong>
+        <p>Renomme la branche actuelle.</p>
+        <code>git branch -m nouveau-nom</code>
+      </div>
+      <button onclick="copyToClipboard('git branch -m nouveau-nom')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Changer de branche :</strong>
+        <p>Permet de passer d'une branche à une autre.</p>
+        <code>git checkout nom-branche</code>
+      </div>
+      <button onclick="copyToClipboard('git checkout nom-branche')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Créer et basculer vers une nouvelle branche :</strong>
+        <p>Crée une nouvelle branche et bascule dessus en même temps.</p>
+        <code>git checkout -b nom-branche</code>
+      </div>
+      <button onclick="copyToClipboard('git checkout -b nom-branche')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Fusionner deux branches :</strong>
+        <p>Fusionne la branche spécifiée avec la branche actuelle.</p>
+        <code>git merge nom-branche</code>
+      </div>
+      <button onclick="copyToClipboard('git merge nom-branche')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Afficher le statut des fichiers :</strong>
+        <p>Vérifie l'état des fichiers dans le dépôt local.</p>
+        <code>git status</code>
+      </div>
+      <button onclick="copyToClipboard('git status')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Pousser les modifications :</strong>
+        <p>Envoie les modifications locales vers le dépôt distant.</p>
+        <code>git push</code>
+      </div>
+      <button onclick="copyToClipboard('git push')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Récupérer les modifications du dépôt distant :</strong>
+        <p>Synchronise la branche locale avec les changements distants.</p>
+        <code>git pull</code>
+      </div>
+      <button onclick="copyToClipboard('git pull')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Initialiser un dépôt Git :</strong>
+        <p>Crée un dépôt Git dans le répertoire courant.</p>
+        <code>git init</code>
+      </div>
+      <button onclick="copyToClipboard('git init')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Cloner un dépôt :</strong>
+        <p>Copie un dépôt distant dans un répertoire local.</p>
+        <code>git clone URL</code>
+      </div>
+      <button onclick="copyToClipboard('git clone URL')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Ajouter un fichier au suivi :</strong>
+        <p>Ajoute un fichier spécifique à l'index pour le prochain commit.</p>
+        <code>git add fichier</code>
+      </div>
+      <button onclick="copyToClipboard('git add fichier')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Ajouter tous les fichiers au suivi :</strong>
+        <p>Ajoute tous les fichiers modifiés à l'index pour le prochain commit.</p>
         <code>git add .</code>
       </div>
       <button onclick="copyToClipboard('git add .')">Copier</button>
@@ -85,40 +195,67 @@
 
     <div class="command-box">
       <div class="explanation">
-        <strong>Créer un commit :</strong>
-        <p>Créez un commit avec un message explicatif.</p>
-        <code>git commit -m "Message de commit"</code>
+        <strong>Voir l'historique des commandes :</strong>
+        <p>Affiche l'historique des commandes exécutées dans le terminal.</p>
+        <code>history</code>
       </div>
-      <button onclick="copyToClipboard('git commit -m \"Message de commit\"')">Copier</button>
+      <button onclick="copyToClipboard('history')">Copier</button>
     </div>
 
     <div class="command-box">
       <div class="explanation">
-        <strong>Pousser les modifications vers le dépôt distant :</strong>
-        <p>Envoyez vos modifications locales sur le dépôt GitLab distant.</p>
-        <code>git push origin nom-branche</code>
+        <strong>Changer de répertoire :</strong>
+        <p>Permet de naviguer vers un autre répertoire.</p>
+        <code>cd chemin</code>
       </div>
-      <button onclick="copyToClipboard('git push origin nom-branche')">Copier</button>
+      <button onclick="copyToClipboard('cd chemin')">Copier</button>
     </div>
 
     <div class="command-box">
       <div class="explanation">
-        <strong>Récupérer les modifications du dépôt distant :</strong>
-        <p>Synchronisez votre dépôt local avec les dernières modifications depuis GitLab.</p>
-        <code>git pull origin nom-branche</code>
+        <strong>Remonter d'un répertoire :</strong>
+        <p>Retourne au répertoire parent.</p>
+        <code>cd ..</code>
       </div>
-      <button onclick="copyToClipboard('git pull origin nom-branche')">Copier</button>
+      <button onclick="copyToClipboard('cd ..')">Copier</button>
     </div>
 
     <div class="command-box">
       <div class="explanation">
-        <strong>Afficher le statut des fichiers :</strong>
-        <p>Vérifiez les fichiers modifiés, non suivis ou en attente de commit.</p>
-        <code>git status</code>
+        <strong>Lister les fichiers et répertoires :</strong>
+        <p>Affiche la liste des fichiers dans le répertoire courant.</p>
+        <code>ls</code>
       </div>
-      <button onclick="copyToClipboard('git status')">Copier</button>
+      <button onclick="copyToClipboard('ls')">Copier</button>
     </div>
-    
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Afficher le chemin courant :</strong>
+        <p>Montre le chemin absolu du répertoire actuel.</p>
+        <code>pwd</code>
+      </div>
+      <button onclick="copyToClipboard('pwd')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Afficher tous les fichiers, y compris les fichiers cachés :</strong>
+        <p>Affiche tous les fichiers, y compris les fichiers et dossiers cachés (commençant par un point).</p>
+        <code>ls -a</code>
+      </div>
+      <button onclick="copyToClipboard('ls -a')">Copier</button>
+    </div>
+
+    <div class="command-box">
+      <div class="explanation">
+        <strong>Pousser une branche et configurer le suivi :</strong>
+        <p>Pousse une nouvelle branche et la lie à la branche distante correspondante.</p>
+        <code>git push --set-upstream origin nom-branche</code>
+      </div>
+      <button onclick="copyToClipboard('git push --set-upstream origin nom-branche')">Copier</button>
+    </div>
+
   </div>
 
   <script>
@@ -135,4 +272,3 @@
 
 </body>
 </html>
-
